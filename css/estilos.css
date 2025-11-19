@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+@font-face {
+  font-family: "gorilas";
+  src: url("/recursos/fuentes/gorillaz_1.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+.fuente-grupo {
+  font-family: "gorilas";
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 20px;
+  nav {
+    ul {
+      display: flex;
+      gap: 20px;
+      list-style-type: none;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      li {
+        position: relative;
+        padding: 5px;
+        &:hover {
+          &::before {
+            width: 100%;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition: all 120ms ease-in-out;
+          background-color: #7bff6a;
+          width: 0%;
+          height: 4px;
+          z-index: -1;
+        }
+        a {
+          color: black;
+          text-decoration: none;
+          /* &:hover {
+            color: rgb(40, 97, 255);
+          } */
+        }
+      }
+    }
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      background-color: black;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      padding: 12px;
+    }
+  }
+}
+
+#miVentana {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: 1px solid gainsboro;
+  padding: 20px;
+  border-radius: 12px;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: transparent;
+    border: none;
+    filter: brightness(0);
+    &:hover {
+      cursor: pointer;
+      filter: brightness(1);
+    }
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+#portada {
+  padding: 20px;
+  img {
+    width: 100%;
+    object-fit: cover;
+    background-color: #f1f1f1;
+    aspect-ratio: 16/4;
+    border-radius: 20px;
+  }
+}
+
+#arriba {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: #06ce1d;
+  color: white;
+  height: 50px;
+  width: 50px;
+  font-size: 25px;
+  border-radius: 100%;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #09a71b;
+  }
+}

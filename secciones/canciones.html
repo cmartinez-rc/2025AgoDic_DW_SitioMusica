@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página fan para el grupo Molotov">
+    <meta name="author" content="Carlos Martínez">
+    <title>Mejores canciones</title>
+</head>
+
+<body>
+    <header>
+        <h1>Gorillaz</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/secciones/galeria.html">Galería</a></li>
+                <li><a href="/secciones/canciones.html">Mejores canciones</a></li>
+                <li><button onclick="miVentana.showModal()">Acerca de</button></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <article>
+            <h3>Redes sociales</h3>
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.instagram.com/gorillaz/?hl=es" target="_blank">Instagram</a>
+            <a href="https://www.x.com">X</a>
+        </article>
+        <article>
+            <h3>Enlaces de interés</h3>
+            <a href="https://www.wikipedia.com">Wikipedia</a>
+            <a href="https://www.spotify.com">Spotify</a>
+        </article>
+    </aside>
+
+    <main>
+        <ol>
+            <li>
+                <div>
+                    <img src="https://i.pinimg.com/736x/40/ee/14/40ee14076b8d8b50a4f06d358d9e729f.jpg" width="100">
+                    <audio src="/audios/Gorillaz - 19-2000 (Lyrics).mp3" controls></audio>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="https://i.pinimg.com/736x/40/ee/14/40ee14076b8d8b50a4f06d358d9e729f.jpg" width="100">
+                    <audio src="/audios/Gorillaz - 19-2000 (Lyrics).mp3" controls></audio>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="https://i.pinimg.com/736x/40/ee/14/40ee14076b8d8b50a4f06d358d9e729f.jpg" width="100">
+                    <audio src="/audios/Gorillaz - 19-2000 (Lyrics).mp3" controls></audio>
+                </div>
+            </li>
+        </ol>
+    </main>
+
+    <dialog id="miVentana">
+        <h5>Bienvenido al sitio</h5>
+        <img src="https://i.pinimg.com/1200x/a8/d3/cb/a8d3cb8231887c6b59ed551c4d9c3aa8.jpg" alt="Imagen de bienvenida"
+            width="300">
+        <p>Desarrollado en el 2025 🛩️🦀🛩️</p>
+        <button onclick="miVentana.close()">Cerrar</button>
+    </dialog>
+
+    <footer>
+        <form action="/">
+            <fieldset>
+                <legend>Registrarme al buzón de noticias 🌈</legend>
+                <label for="nombre">Nombre completo</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre">
+                <label for="nacimiento">Fecha de nacimiento</label>
+                <input type="date" id="nacimiento">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" placeholder="Motivo por el que quieres inscribirte al buzón..."></textarea>
+                <label for="pais">País</label>
+                <select id="pais">
+                    <option>México</option>
+                    <option>Estados Unidos</option>
+                    <option>Otro</option>
+                </select>
+                <label for="ocupacion">Ocupación</label>
+                <input type="text" id="ocupacion" list="ocupaciones">
+                <datalist id="ocupaciones">
+                    <option>Granjero</option>
+                    <option>Musico</option>
+                    <option>Deportista</option>
+                    <option>Cantante</option>
+                    <option>Cocinero</option>
+                    <option>Actor</option>
+                </datalist>
+                <button>Enviar</button>
+            </fieldset>
+        </form>
+        Derechos reservados 2025
+    </footer>
+</body>
+
+</html>
