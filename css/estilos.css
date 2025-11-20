@@ -69,6 +69,16 @@ header {
       padding: 12px;
     }
   }
+
+  @media (width <= 768px) {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 1fr;
+
+    nav,
+    div {
+      grid-row: 2/3;
+    }
+  }
 }
 
 #miVentana {
@@ -129,5 +139,123 @@ body:has(dialog[open]) {
   &:hover {
     cursor: pointer;
     background-color: #09a71b;
+  }
+}
+
+body {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "navegacion   navegacion"
+    "portada      portada"
+    "lateral      contenido"
+    "pie          pie";
+
+  header {
+    grid-area: navegacion;
+  }
+  #portada {
+    grid-area: portada;
+  }
+  aside {
+    grid-area: lateral;
+    position: sticky;
+    height: fit-content;
+    top: 10px;
+    article {
+      background-color: #f4f4f4;
+      margin-bottom: 10px;
+      padding: 20px;
+
+      &:nth-child(even) {
+        border-left: 12px solid #7bff6a;
+      }
+      &:nth-child(odd) {
+        border-left: 12px solid #ff7e6a;
+      }
+
+      a {
+        text-decoration: none;
+        display: block;
+        transition: all 150ms ease;
+        color: #222;
+        &:hover {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  main {
+    grid-area: contenido;
+    h3 {
+      font-size: 64px;
+    }
+    /* img:first-of-type {
+        float: left;
+        margin-right: 30px;
+      } */
+    blockquote {
+      font-style: italic;
+      color: #888;
+      &::before,
+      &::after {
+        content: '"';
+      }
+    }
+
+    figure {
+      display: inline-block;
+      width: 25vw;
+      img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        box-shadow: 0 0 6px 0 #0008;
+      }
+      figcaption {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+
+    table {
+      width: 100%;
+    }
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: #222;
+      color: #fff;
+    }
+
+    tr:nth-child(even),
+    tfoot > tr {
+      background-color: #ddffe1;
+    }
+
+    h4 {
+      margin-top: 40px;
+    }
+
+    hr {
+      height: 8px;
+      border: none;
+      background-color: #191fd4;
+      margin-bottom: 12px;
+      width: 12%;
+    }
+  }
+  aside,
+  main {
+    padding-inline: 20px;
+  }
+  footer {
+    grid-area: pie;
   }
 }
